@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF=8">
+    <meta name="viewport" content="width-device-width,initial-scle=1.0">
+    <title>Florence!!</title>
+    <!---bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!---rolly-->
+    <link rel="stylesheet" href="https://unpkg.com/rolly.js@0.2.1/css/style.css">
+    <!--aos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>\
+     <!--enriqueta font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
+     <!--montserrat font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <!---main css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <!---bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+  <main class="app">
+<!--header-->
+{% include 'header.html' %}
+ <!--form-->
+<div class="container" data-scene>
+<form class="was-validated" method="post">
+  {% csrf_token %}
+  <div class="contact-box">
+    <div class="left" data-aos="zoom-out-right"></div>
+    <div class="right" data-aos="zoom-out-left">
+      <h2>Contact Us</h2>
+      {% for msg in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ msg }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+      <input name="name" type="text" class="field" placeholder="Your Name" required>
+      <input name="email" type="email" class="field" placeholder="Your Email" required>
+      <input name="phone" type="text" class="field" placeholder="Your Phone" required>
+      <textarea name="message" class="field area" placeholder="Message" required></textarea>
+      <button input type="submit" class="btn" value="Submit">Submit</button>
+      
+    </div>
+  </div>
+</form>
+</div>
+<!---footer-->
+{% include 'footer.html' %}
+</main>
+<!--rolly-->
+<script src="https://unpkg.com/rolly.js@0.2.1/dist/rolly.min.js"></script>
+<!--aos-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  //rolly
+const r = rolly({
+  view: document.querySelector('.app'),
+  native: true,
+});
+r.init();
+
+//AOS
+AOS.init({
+  duration:1500
+});
+</script>
+</body>
+</html>

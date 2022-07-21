@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+    <title>Bouqeut Details</title>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!--enriqueta font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
+    <!--montserrat font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    {% load static %}
+
+
+
+  </head>
+
+  <style>
+
+    
+    *{
+        box-sizing: border-box;
+
+        padding: 0;
+        margin: 0;
+    }
+    body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}
+h1,h2,h3,h4,h5,h6
+{
+    font-family: 'Enriqueta', serif;
+}
+h1{
+    font-size: 70px;
+}
+h2{
+    font-size: 36px;
+}
+h3{
+    font-size: 26px;
+}
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.container2{
+    margin-right: 50px;
+    margin-left: 57px;
+}
+#header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+  }
+  #header.header-scrolled, #header.header-inner-pages {
+    position: sticky;
+    background: #1f1d36bd;
+  }
+  #header .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  #header .logo a {
+    color: #fff;
+  }
+  #header .logo img {
+    max-height: 40px;
+  }
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+  padding: 0;
+}
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar li {
+  position: relative;
+}
+.navbar a, .navbar a:focus {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.navbar a i, .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #FCC5C0;
+}
+.navbar .getstarted, .navbar .getstarted:focus {
+  padding: 8px 20px;
+  margin-left: 30px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+  border: 2px solid #1F1D36;
+  font-weight: 600;
+}
+.navbar .getstarted:hover, .navbar .getstarted:focus:hover {
+  color: #fff;
+  background: #1F1D36;
+}
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 500;
+  color: #1F1D36;
+}
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+  color: #FCC5C0;
+}
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+}
+    .card-wrapper{
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    .img-zoom-container {
+    position: relative;
+    
+  }
+  
+    .img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /*set the size of the lens:*/
+    width: 40px;
+    height: 40px;
+  }
+  
+    .img-zoom-result {
+    border: 1px solid #d4d4d4;
+    /*set the size of the result div:*/
+    width: 280px;
+    height: 250px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+    img{
+        width: 400px;
+        display: block;
+        margin-bottom:5px;
+        margin-top:150px;
+        border: 0.5px solid #ddd;
+        border-radius: 3.5px;
+        padding: 5px;
+        background-color:#AA7EA1
+        ;
+    }
+    
+    .img-display{
+        overflow: hidden;
+    }
+    .img-showcase{
+        display: flex;
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+    .img-showcase img{
+        min-width: 450px;
+    }
+    
+    .product-content{
+        padding: 2rem 1rem;
+    }
+    .product-title{
+        font-size: 2.8rem;
+        text-transform: capitalize;
+        font-weight: 700;
+        position: relative;
+        color: #12263a;
+        margin: 0rem ;
+        margin-top: 140px;
+        padding-top:2rem;
+
+    }
+  
+    .product-link{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        background: #256eff;
+        color: #fff;
+        padding: 0 0.3rem;
+        transition: all 0.5s ease;
+    }
+    .product-link:hover{
+        opacity: 0.9;
+    }
+    .product-rating{
+        color: #ffc107;
+    }
+    .product-rating span{
+        font-weight: 600;
+        color: #252525;
+    }
+    .product-price{
+        margin: 1rem 0;
+        
+    }
+    .product-price span{
+      font-size: 22px;
+      opacity: 0.8;
+
+    }
+    
+    
+    .price span{
+        color: #256eff;
+    }
+    .product-detail h2{
+        text-transform: capitalize;
+        color: #12263a;
+        padding-bottom: 0.6rem;
+        font-size: 25px;
+       
+
+    }
+    .product-detail p{
+        font-size: 0.9rem;
+        padding: 0.3rem;
+        opacity: 0.8;
+    }
+    .product-detail ul{
+        margin: 1rem ;
+        font-size: 0.9rem;
+        
+    }
+    
+
+    .product-detail ul li{
+        margin: 0;
+        list-style: none;
+        padding-left: 0.7rem;
+        margin: 0.4rem 0;
+        font-weight: 600;
+        opacity: 0.9;
+    }
+    .product-detail ul li span{
+        font-weight: 400;
+    }
+    
+    .purchase-info{
+        margin: 1.5rem 0;
+    }
+    .purchase-info input,
+    .purchase-info .btn{
+        border: 1.5px solid #ddd;
+        border-radius: 25px;
+        text-align: center;
+        padding: 0.45rem 0.8rem;
+        outline: 0;
+        margin-right: 0.2rem;
+        margin-bottom: 1rem;
+    }
+    .purchase-info input{
+        width: 60px;
+    }
+    .purchase-info .btn{
+        cursor: pointer;
+        color: #fff;
+        background: #864879;
+        padding: 15px 30px;
+        font-size: 16px;
+
+      }
+   
+    .purchase-info .btn:hover{
+    background-color: #FCC5C0;
+        opacity: 0.9;
+    }
+    
+    
+    .dis p{
+      padding-top: 3rem;
+      font-weight: 600;
+      opacity: 0.9;
+      padding-bottom:0.5rem;
+    }
+    .dis-sp span{
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-top: 0.3rem;
+      padding-right:0.9rem;
+    }
+
+      .card{
+  --bs-card-border-width: 0px;
+  padding-top:6rem;
+
+  background-color: #FFF8F8;
+
+          }    
+  
+      
+    @media screen and (min-width: 992px){
+        .card{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1.5rem;
+            background-color: #FFF8F8;
+            }
+        }
+        .card-wrapper{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#FFF8F8;
+        }
+        .product-imgs{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .product-content{
+            padding-top: 0;
+        }
+    
+    body{
+        background-color: #FFF8F8;
+        
+    }
+    
+    </style>
+<script>
+  
+  function imageZoom(imgID, resultID) {
+    var img, lens, result, cx, cy;
+    img = document.getElementById(imgID);
+    result = document.getElementById(resultID);
+    /* Create lens: */
+    lens = document.createElement("DIV");
+    lens.setAttribute("class", "img-zoom-lens");
+    /* Insert lens: */
+    img.parentElement.insertBefore(lens, img);
+    /* Calculate the ratio between result DIV and lens: */
+    cx = result.offsetWidth / lens.offsetWidth;
+    cy = result.offsetHeight / lens.offsetHeight;
+    /* Set background properties for the result DIV */
+    result.style.backgroundImage = "url('" + img.src + "')";
+    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+    /* Execute a function when someone moves the cursor over the image, or the lens: */
+    lens.addEventListener("mousemove", moveLens);
+    img.addEventListener("mousemove", moveLens);
+    /* And also for touch screens: */
+    lens.addEventListener("touchmove", moveLens);
+    img.addEventListener("touchmove", moveLens);
+    function moveLens(e) {
+      var pos, x, y;
+      /* Prevent any other actions that may occur when moving over the image */
+      e.preventDefault();
+      /* Get the cursor's x and y positions: */
+      pos = getCursorPos(e);
+      /* Calculate the position of the lens: */
+      x = pos.x - (lens.offsetWidth / 2);
+      y = pos.y - (lens.offsetHeight / 2);
+      /* Prevent the lens from being positioned outside the image: */
+      if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+      if (x < 0) {x = 0;}
+      if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+      if (y < 0) {y = 0;}
+      /* Set the position of the lens: */
+      lens.style.left = x + "px";
+      lens.style.top = y + "px";
+      /* Display what the lens "sees": */
+      result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+    }
+    function getCursorPos(e) {
+      var a, x = 0, y = 0;
+      e = e || window.event;
+      /* Get the x and y positions of the image: */
+      a = img.getBoundingClientRect();
+      /* Calculate the cursor's x and y coordinates, relative to the image: */
+      x = e.pageX - a.left;
+      y = e.pageY - a.top;
+      /* Consider any page scrolling: */
+      x = x - window.pageXOffset;
+      y = y - window.pageYOffset;
+      return {x : x, y : y};
+    }
+  }
+</script>
+{% include 'header.html' %}
+
+  <body class="bg">
+
+    <div class = "card-wrapper">
+      <div class = "card back">
+        <!-- card left -->
+        <div class = "product-imgs">
+          <div class = "img-display">
+            <div class = "img-showcase">
+                <div class="img-zoom-container">   <!--image lens code-->
+                    <img id="myimage" src = "{{data.image.url}}" alt = "shoe image" height="500px">
+                    <div id="myresult" class="img-zoom-result"></div>
+                    <script>
+                      imageZoom("myimage", "myresult");
+                      </script>
+                  </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- card right -->
+        <div class = "product-content">
+          <h1 class = "product-title">{{data.name}}</h1>
+          <div class = "product-rating">
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star-half-alt"></i>
+            <span>4.7(21)</span>
+          </div>
+
+          <div class = "product-price">
+            <span>Rs.{{data.price}}</span>
+          </div>
+
+          <div class = "product-detail">
+            <h2>About Bouquet </h2>
+            <p>Elegance Bouquet is the perfect bouquet expressing decency, class, and elegance.
+               This arrangement will showcase your feelings immaculately.</p>
+            <h2>Description </h2>
+            <p>{{data.description}}</p>
+            <ul>
+              <li>Quantity Available: <span>{{data.quantity}}</span></li>
+              <li>Category: <span>{{data.category.name}}</span></li>
+              <li>Shipping Area: <span>All over the counrtry</span></li>
+              <li>Shipping Fee: <span>Free</span></li>
+            </ul>
+          </div>
+          <br>
+          <div class="dis">
+            <h5> Disclaimer 
+            </h5>
+          </div>
+          <div class="dis-sp">
+             <span>We make our best efforts to capture the content of the image shown here. However, please remember that flowers are a product of nature, they may vary in color, number and size of blooms.
+
+             Prices are inclusive of all taxes.</span>
+             </div>
+     
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

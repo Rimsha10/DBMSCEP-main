@@ -1,0 +1,104 @@
+<html>
+<style>
+/*---------
+# Toast
+------*/
+
+    #snackbar {
+      opacity: 1;
+      visibility: hidden;
+      min-width: 250px;
+      margin-left: -125px;
+      background-color: #1b192e;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      bottom: 30px;
+      font-size: 17px;
+    }
+    
+    #snackbar.show {
+      visibility: visible;
+      -webkit-animation: fadein 1s, fadeout 1s 2.5s;
+      animation: fadein 1s, fadeout 1s 2.5s;
+    }
+    #snackbar .loginbtn{
+      padding: 8px 20px;
+      margin-left: 30px;
+      border-radius: 50px;
+      color: #fff;
+      font-size: 14px;
+      border: 2px solid #E9A6A6;
+      font-weight: 600;
+    }
+
+    
+    @-webkit-keyframes fadein {
+      from {bottom: 0; opacity: 0;} 
+      to {bottom: 30px; opacity: 1;}
+    }
+    
+    @keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 30px; opacity: 1;}
+    }
+    
+    @-webkit-keyframes fadeout {
+      from {bottom: 30px; opacity: 1;} 
+      to {bottom: 0; opacity: 0;}
+    }
+    
+    @keyframes fadeout {
+      from {bottom: 30px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+    }
+    </style>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+      }
+      function login(){
+        location.href="{% url 'login' %}";
+    }
+      </script>
+<body>
+    {% if not request.session.customer %}
+    <div id="snackbar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Error</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" style="background-color: #E9A6A6"></button>
+      </div>
+      <div class="toast-body">
+        Product cannot be added to the cart! Please login.. 
+      </div>
+      <br>
+      <div>
+      <a class="loginbtn " href="{% url 'login' %}">Login</a></div>
+    </div>
+    {% endif %}
+<!--
+    {% if request.session.customer %}
+    <div id="snackbar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Error</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" style="background-color: #E9A6A6"></button>
+      </div>
+      <div class="toast-body">
+        Product has been added to the cart Successfully!!
+      </div>
+      <br>
+      <div>
+      <a class="loginbtn " href="{% url 'login' %}">Cart</a></div>
+    </div>
+    
+    {% endif %}
+  -->
+</body>
+</html>

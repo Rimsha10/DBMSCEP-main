@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box-element">
+            <a style="background-color:#61445f; margin-top:40px; color:white; margin-left:40px; padding:14px 20px; border-radius:8px" class="btn btn-outline-dark" href="{% url 'products'%}"> Continue Shopping</a>
+            <br>
+            <br>
+            <table class="table">
+                <tr>
+                    <th><div style="margin-left:60px">Items: <strong>{{order.get_cart_items}}</strong></div></th>
+                    <th><div style="margin-left:60px">Total: <strong> ${{order.get_cart_total}}</strong></div></th>
+                        <th>
+                            <a style= "background-color:#61445f; color:white; margin-left:80px; padding:14px 40px; border-radius:8px"class="btn btn-outline-dark" href="{% url 'checkout'%}">Checkout</a>
+                        </th>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+        <div class="box-element">
+            <div style="display:flex; align-items:flex-stretch; padding-bottom:10px; margin-bottom:10px; border-bottom:1px solid #ececec;" class="cart-row">
+                <div style="flex:2"></div>
+                <div style="flex:2; margin-left:150px"><strong>Item</strong></div>
+                <div style="flex:1"><strong>Price</strong></div>
+                <div style="flex:1"><strong>Quantity</strong></div>
+                <div style="flex:1"><strong>Total</strong></div>
+            </div>
+            {% for item in items %}
+
+            <div style="display:flex; align-items:flex-stretch; padding-bottom:10px; margin-bottom:10px; border-bottom: 1px solid #dfcccc; margin-left:60px" class="cart-row">
+                <div style="flex:2; margin-left:30px"><img class="row-image" src="{{item.product.image.url}}" width="80" height="40"></div>
+                <div style="flex:2">{{item.product.name}}</div>
+                <div style="flex:1"><p>${{item.product.price}}</p></div>
+                <div style="flex:1">
+                    <p class="quantity">{{item.quantity}}</p>
+                    
+                </div>
+                <div style="flex:1"><p>${{item.get_total}}</p></div>
+                </div>
+                
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

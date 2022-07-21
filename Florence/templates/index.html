@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF=8">
+    <meta name="viewport" content="width-device-width,initial-scle=1.0">
+    <title>Florence!!</title>
+    <!---bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--slick slider-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <!---rolly-->
+    <link rel="stylesheet" href="https://unpkg.com/rolly.js@0.2.1/css/style.css">
+    <!--aos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+    <!--enriqueta font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
+    <!--montserrat font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <!---main css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <!---bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js">
+    </script>
+</head>
+<body>
+<main class="app">
+<!--header-->
+{% include 'header.html' %}
+<!----Banner--->
+  <section class="banner" data-scene>
+    <div class="container ">
+      <div class="text" data-aos="zoom-out" data-aos-delay="1000">
+        <h1>Forence!!<br>A staple of love & care.</h1>
+        <p>Show your loved ones that you care about them in a special way.<br>Make memories worth remembering.</p>
+        <a href="{% url 'about' %}" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+<!----Brands' Logos---->
+<section class="brand-logo" data-scene>
+  <div class="container">
+    <div class="brand-logo-inner" data-aos="fade-up">
+      <div class="item"><img src="{% static 'images/b1.png' %}"  alt="brand1"></div>
+      <div class="item"><img src="{% static 'images/b2.png' %}"  alt="brand2"></div>
+      <div class="item"><img src="{% static 'images/b3.png' %}"  alt="brand3"></div>
+      <div class="item"><img src="{% static 'images/b4.png' %}"  alt="brand4"></div>
+      <div class="item"><img src="{% static 'images/b5.png' %}"  alt="brand5"></div>
+    </div>
+  </div>
+</section>
+<!---section1-->
+<!---Who We Are--->
+<section class="sec1" data-scene>
+  <div class="container">
+    <div class="sec1-inner">
+      <div class="text text-left" data-aos="zoom-out-right">
+        <h3>WHO WE ARE !!</h3>
+        <p>|FLORENCE| -noun derived from FRENCH meaning "blossoming", verb floreo, meaning "I blossom / I flower / I flourish".<br>This website was constructed as a CEP project of DBMS by students from the NEDUET department of CIS.
+          To suit real-world expectations, the website is database backed.
+          </p>
+      </div>
+      <div class="text text-right" data-aos="zoom-out-left">
+        <section id="about">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 skills-bar">
+                <div class="bar">
+                  <div class="info">
+                    <span>HAPPY CUSTOMERS</span>
+                  </div>
+                  <div class="progress-line customer"><span></span></div>
+                </div>
+                <div class="bar">
+                  <div class="info">
+                    <span>PRODUCT QUALITY</span>
+                  </div>
+                  <div class="progress-line product"><span></span></div>
+                </div>
+                <div class="bar">
+                  <div class="info">
+                    <span>DELIVERY TIME</span>
+                  </div>
+                  <div class="progress-line delivery"><span></span></div>
+                </div>
+                <div class="bar">
+                  <div class="info">
+                    <span>CUSTOMER SERVICE</span>
+                  </div>
+                  <div class="progress-line service"><span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </section>
+      </div>
+    </div>
+  </div>
+</section>
+<!--section 2 is recycled in about us + contact us-->
+<!---section3-->
+<section class="sec3" data-scene>
+  <div class="container">
+    <div class="sec3-inner" data-aos="zoom-out-left">
+      <h2>our trending products</h2>
+      <div class="sec3-slider">
+        <a href="http://127.0.0.1:8000/products/21"><div class="item">
+          <img src="{% static 'images/br1.jpeg' %}" style="height: 350px;" alt="slide1">
+        </div></a>
+        <a href="http://127.0.0.1:8000/products/4"><div class="item">
+          <img src="{% static 'images/w1.jpeg' %}" style="height: 350px;" alt="slide2">
+        </div></a>
+        <a href="http://127.0.0.1:8000/products/27"><div class="item">
+          <img src="{% static 'images/s1.jpg' %}" style="height: 350px;" alt="slide3">
+        </div></a>
+        <a href="http://127.0.0.1:8000/products/20"><div class="item">
+          <img src="{% static 'images/br2.jpg' %}" style="height: 350px;" alt="slide4">
+        </div></a>
+        <a href="http://127.0.0.1:8000/products/10"><div class="item">
+          <img src="{% static 'images/w2.jpeg' %}" style="height: 350px;" alt="slide5">
+        </div></a>
+        <a href="http://127.0.0.1:8000/products/28"><div class="item">
+          <img src="{% static 'images/s4.jpg' %}" style="height: 350px;" alt="slide6">
+        </div></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!---section4-->
+<section class="sec4" data-scene>
+  <div class="container">
+    <div class="sec4-inner" data-aos="zoom-out-right">
+      <h2>our collection</h2>
+      <div class="sec4-boxes">
+        <div class="box">
+          <a class="nav-link" href="http://127.0.0.1:8000/products/?category=1">Weddings</a>
+          <div class="img">
+            <img src="{% static 'images/w3.jpeg' %}" style="height: 270px;" alt="images">
+          </div>
+        </div>
+        <div class="box">
+          <a class="nav-link" href="http://127.0.0.1:8000/products/?category=2">Birthdays</a>
+          <div class="img">
+            <img src="{% static 'images/br3.jpeg' %}" style="height: 270px;" alt="images">
+          </div>
+        </div>
+        <div class="box">
+          <a class="nav-link" href="http://127.0.0.1:8000/products/?category=3">Sympathy</a>
+          <div class="img">
+            <img src="{% static 'images/s3.jpg' %}" style="height: 270px;" alt="images">
+          </div>
+        </div>
+        <div class="box">
+          <a class="nav-link" href="http://127.0.0.1:8000/products/?category=1">Weddings</a>
+          <div class="img">
+            <img src="{% static 'images/w4.jpeg' %}" style="height: 270px;" alt="images">
+          </div>
+        </div>
+        <div class="box">
+          <a class="nav-link" href="http://127.0.0.1:8000/products/?category=2">Birthdays</a>
+          <div class="img">
+            <img src="{% static 'images/br4.jpeg' %}" style="height: 270px;" alt="images">
+          </div>
+        </div>
+        <div class="box">
+          <a class="nav-link" href="http://127.0.0.1:8000/products/?category=3">Sympathy</a>
+          <div class="img">
+            <img src="{% static 'images/s2.jpg' %}" style="height: 270px;" alt="images">
+          </div>
+        </div>
+        <div class="box">
+          <a class="nav-link" href="http://127.0.0.1:8000/products/?category=1">Weddings</a>
+          <div class="img">
+            <img src="{% static 'images/w5.jpeg' %}" style="height: 270px;" alt="images">
+          </div>
+        </div>
+        <div class="box">
+          <a class="nav-link" href="http://127.0.0.1:8000/products/?category=2">Birthdays</a>
+          <div class="img">
+            <img src="{% static 'images/br5.jpg' %}" style="height: 270px;" alt="images">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!---footer-->
+{% include 'footer.html' %}
+</main>
+<!--slick slider-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<!--rolly-->
+<script src="https://unpkg.com/rolly.js@0.2.1/dist/rolly.min.js"></script>
+<!--aos-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!---slick slider-->
+<script>
+  $('.sec3-slider').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 2,
+  speed:1500
+});
+//rolly
+const r = rolly({
+  view: document.querySelector('.app'),
+  native: true,
+});
+r.init();
+
+//AOS
+AOS.init({
+  duration:1500
+});
+</script>
+</body>
+</html>

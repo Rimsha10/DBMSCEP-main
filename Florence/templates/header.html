@@ -1,0 +1,42 @@
+{% load static %}
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top header-scrolled">
+  <div class="container2 d-flex align-items-center">
+
+    <div class="logo me-auto"><a>FLORENCE</a></div>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+        <li class="dropdown" ><a href="#"><span>Categories</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="{% url 'products' %}">All</a></li>
+            <li><a href="http://127.0.0.1:8000/products/?category=1">Weddings</a></li>
+            <li><a href="http://127.0.0.1:8000/products/?category=2">Birthdays</a></li>
+            <li><a href="http://127.0.0.1:8000/products/?category=3">Sympathy</a></li>
+          </ul>
+        </li>
+        </li>
+        {% if request.session.customer %}
+        <li><a class="nav-link " href="{% url 'cart' %}">My Cart</a></li>
+        <li class="dropdown" ><a href="#"><span>Profile</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="{% url 'profile' %}">View Profile</a></li>
+
+            <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link  " href="{% url 'logout' %}">Logout</a></li>
+        {% endif %}
+        <li><a class="nav-link " href="{% url 'contact' %}">Contact</a></li>
+        <li><a class="nav-link " href="{% url 'about' %}">About</a></li>
+        <li><a class="getstarted " href="{% url 'login' %}">Get Started</a></li>
+      </ul>
+    </nav><!-- .navbar -->
+  </div>
+  
+</header><!-- End Header -->
+
+
