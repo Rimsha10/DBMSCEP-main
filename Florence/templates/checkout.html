@@ -76,14 +76,14 @@
             <div style="display: flex; align-items: flex-stretch; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #ececec"class="cart-row">
                 <div style="flex:2"><img class="row-image" src="{{item.product.image.url}}" width="80" height="40"></div>
                 <div style="flex:2; padding:30px"><p>{{item.product.name}}</p></div>
-                <div style="flex:1; padding:30px"><p>${{item.product.price}}</P></div>
+                <div style="flex:1; padding:30px"><p>Rs.{{item.product.price}}</P></div>
                 <div style="flex:1; padding:30px"><p>x{{item.quantity}}</p></div>
             </div>
             {% endfor %}
             <hr>
             <h5>Items:{{order.get_cart_items}}</h5>
             <hr>
-            <h5>Total: ${{order.get_cart_total}}</h5>
+            <h5>Total: Rs.{{order.get_cart_total}}</h5>
             <hr>
         </div>
     </div>
